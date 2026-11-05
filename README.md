@@ -2,6 +2,14 @@
 
 面向 STM32、MSPM0、ESP32 等开发板的本地实践项目：按项目管理串口数据、波形、异常规则、调试记录和资料。由 AI 辅助制作，支持 USB 串口，并非示波器或 ST-Link 的替代品。
 
+## 系统架构
+
+<p align="center">
+  <img src="docs/assets/workbench-architecture.svg" alt="开发板调试工作台本地数据流与 GDB 调试架构图" width="100%">
+</p>
+
+<sub>这是根据当前实现整理的运行架构图，不是软件界面截图。串口采集与 GDB 调试是两条独立链路；GDB Server 由用户自行启动，工作台不会自动烧录固件。</sub>
+
 ## 串口数据约定
 
 开发板通过 USB 串口每行发送一个 UTF-8 JSON 对象，并以换行符结束，例如：
