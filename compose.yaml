@@ -1,0 +1,15 @@
+services:
+  board-workbench:
+    build: .
+    ports:
+      - "127.0.0.1:18763:18763"
+    volumes:
+      - boardlab-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:18763/api/projects', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+volumes:
+  boardlab-data:

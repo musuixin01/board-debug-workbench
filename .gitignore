@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+uploads/
+.env
+.env.*
+!.env.example
+examples/**/build/
+examples/**/sdkconfig
+examples/**/sdkconfig.old
